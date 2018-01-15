@@ -42,10 +42,10 @@ name | VARCHAR(255) | Y | 客户名称
 1 | GET:/customer|进入客户列表页
 2 | POST:/customer/search|查询客户
 3 | GET:/customer/show/{id}|进入客户详情页
-4 | GET:/customer/create/page|进入创建客户页面
-5 | POST:/customer/create/save|创建客户
-6 | GET:/customer/edit/page|进入编辑客户页面
-7 | PUT:/customer/edit/save|编辑客户
+4 | GET:/customer/create|进入创建客户页面
+5 | POST:/customer/create|处理创建客户请求
+6 | GET:/customer/edit|进入编辑客户页面
+7 | PUT:/customer/edit|处理编辑客户请求
 8 | DELTE:/customer/delete/{id}|删除客户
 
 
