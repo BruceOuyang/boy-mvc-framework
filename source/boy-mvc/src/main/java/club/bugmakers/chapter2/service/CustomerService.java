@@ -1,13 +1,13 @@
 package club.bugmakers.chapter2.service;
 
 import club.bugmakers.chapter2.model.Customer;
-import club.bugmakers.util.PropsUtil;
+import club.bugmakers.helper.DatabaseHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.*;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 /**
  * 提供客户数据服务
@@ -17,33 +17,14 @@ public class CustomerService {
 
     private static Logger logger = LoggerFactory.getLogger(CustomerService.class);
 
-    private static final String DRIVER;
-    private static final String URL;
-    private static final String USERNAME;
-    private static final String PASSWORD;
-
-    static {
-        Properties conf = PropsUtil.loadProps("config.properties");
-        DRIVER = conf.getProperty("jdbc.driver");
-        URL = conf.getProperty("jdbc.url");
-        USERNAME = conf.getProperty("jdbc.username");
-        PASSWORD = conf.getProperty("jdbc.password");
-
-        try{
-            Class.forName(DRIVER);
-        } catch (ClassNotFoundException e) {
-            logger.error("can not load jdbc driver class", e);
-        }
-    }
-
     /**
      * 获取客户列表
      * @param keyword
      * @return
      */
     public List<Customer> getCustomerList(String keyword) {
-        // TODO
-        return null;
+        String sql = "select * from customer";
+        return DatabaseHelper.queryEntityList(Customer.class, sql);
     }
 
     /**

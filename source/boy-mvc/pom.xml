@@ -75,6 +75,12 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.0</version>
         </dependency>
+        <!--apache comm dbUtils-->
+        <dependency>
+            <groupId>commons-dbutils</groupId>
+            <artifactId>commons-dbutils</artifactId>
+            <version>1.6</version>
+        </dependency>
     </dependencies>
 
     <build>
