@@ -2,6 +2,7 @@ package club.bugmakers.chapter2.test;
 
 import club.bugmakers.chapter2.model.Customer;
 import club.bugmakers.chapter2.service.CustomerService;
+import club.bugmakers.helper.DatabaseHelper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,8 +23,8 @@ public class CustomerServiceTest {
     }
 
     @Before
-    public void init(){
-        // TODO init database
+    public void init() throws Exception {
+        DatabaseHelper.executeSqlFile("sql/customer_init.sql");
     }
 
     @Test
