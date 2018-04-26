@@ -25,4 +25,12 @@ hs_err_pid*
 source/boy-mvc/target/
 
 # idea
+.idea
 *.iml
+
+# eclipse
+.settings
+.metadata/
+.classpath
+.project
+Servers/
